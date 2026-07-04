@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="css/cewek.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- BACKGROUND AWAN BERGERAK -->
+    <div class="bg-awan"></div>
+
+    <!-- ELEMEN UNTUK EFEK LINGKARAN MELAYANG (Ditampilkan lewat JS nanti) -->
+    <div id="efek-lingkaran" class="bubbles-wrapper" style="display: none;"></div>
+
+    <!-- AUDIO BACKSOUND (Ganti src ke file lagu lu, misal: assets/musik.mp3) -->
+    <audio id="backsound" src="assets/voice/aw.mp3" loop></audio>
+
+    <!-- HALAMAN AWAL: STRUKTUR SURAT -->
+    <div id="halaman-awal" class="wrapper-surat">
+        <div class="envelope-wrapper" id="btn-buka-surat">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="pocket"></div>
+                <div class="letter">
+                    <div class="letter-text">Hallow Hehe
+                        (●'◡'●)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="teks-petunjuk">Pencet surat ini ✨</p>
+    </div>
+
+    <!-- CONTAINER UTAMA -->
+    <div class="container" id="konten-utama" style="display: none;">
+        
+        <!-- BAGIAN 1: INPUT NAMA (Selesai) -->
+        <div id="section-nama">
+            <h2 class="judul-input">Masukkan Nama Kamu 🫣</h2>
+            <input type="text" id="input-nama" autofocus autocomplete="off">
+            <button id="btn-submit-nama">OK</button>
+        </div>
+
+        <!-- BAGIAN 2: PERTANYAAN NEMBAK (Baru - Sesuai Screenshot 2026-07-04 203609.jpg) -->
+        <div id="section-pertanyaan" style="display: none;">
+            <!-- Maskot Bundar di Atas Container -->
+            <div class="wrapper-maskot">
+                <img src="assets/dudu1.gif" alt="Mascot" class="mascot-bundar">
+            </div>
+            
+            <!-- Teks Sapaan Nama Dinamis -->
+            <h3 id="sapaan-nama" class="sapaan-user">Hai, dinda ✨</h3>
+            
+            <!-- Box Pertanyaan & Tombol Pilihan -->
+            <div class="box-pertanyaan">
+                <p id="teks-pertanyaan" class="judul-input">Mau jadi pacarku ga? 🥺</p>
+                <div class="wrapper-tombol-pilihan">
+                    <button id="btn-iya" class="btn-pilihan btn-mau">Iya mau kok</button>
+                    <button id="btn-tidak" class="btn-pilihan btn-ga">Tidak</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/cewek.js"></script>
+</body>
+</html>

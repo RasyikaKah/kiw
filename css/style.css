@@ -1,0 +1,325 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+    isolation:isolate;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #1e1b4b 45%,
+        #312e81 100%
+    );
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle, transparent 40%, rgba(0,0,0,.35));
+    pointer-events:none;
+}
+
+/* ========================= */
+/* START SCREEN */
+/* ========================= */
+
+#startScreen{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:#0b1020;
+
+    z-index:999;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.6s ease;
+
+}
+
+#startScreen h1{
+
+    font-size:42px;
+    margin:0;
+
+}
+
+#startScreen p{
+
+    margin-top:12px;
+
+    font-size:18px;
+
+    opacity:.7;
+
+}
+
+#startScreen.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+/* ========================= */
+/* BACKGROUND */
+/* ========================= */
+
+.blob{
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.3;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:float 10s ease-in-out infinite;
+
+}
+
+.blob1{
+
+    background:#ff4da6;
+
+    top:-120px;
+    left:-120px;
+
+}
+
+.blob2{
+
+    background:#5b7fff;
+
+    right:-120px;
+    bottom:-120px;
+
+    animation-delay:5s;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    25%{
+
+        transform:translate(35px,-20px) scale(1.03);
+
+    }
+
+    50%{
+
+        transform:translate(60px,-40px) scale(.98);
+
+    }
+
+    75%{
+
+        transform:translate(20px,15px) scale(1.02);
+
+    }
+
+    100%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.container{
+
+    width:420px;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:10;
+
+    transition:.35s ease;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+.container.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.container:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+
+}
+
+/* ========================= */
+/* TITLE */
+/* ========================= */
+
+h1{
+
+    color:#fff;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    line-height:1.3;
+
+    margin-bottom:35px;
+
+    text-shadow:0 5px 20px rgba(255,255,255,.12);
+
+}
+
+h1 div{
+
+    font-size:16px;
+
+    font-weight:400;
+
+    color:rgba(255,255,255,.65);
+
+    margin-bottom:8px;
+
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+button{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:16px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    cursor:pointer;
+
+    outline:none;
+
+    transition:.25s ease;
+
+}
+
+#girl{
+
+    background:linear-gradient(135deg,#ff6bb5,#ff3f8e);
+
+}
+
+#boy{
+
+    background:linear-gradient(135deg,#5d8fff,#3b6cff);
+
+}
+
+button:hover{
+
+    transform:translateY(-5px) scale(1.03);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+.mascot{
+
+    position:absolute;
+
+    width:260px;
+    
+    top:-170px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:20;
+
+    pointer-events:none;
+
+    filter:drop-shadow(0 10px 25px rgba(0,0,0,.45));
+
+}
