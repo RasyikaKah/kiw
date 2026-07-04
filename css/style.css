@@ -85,82 +85,69 @@ body::before{
 }
 
 /* ========================= */
+/* BACKGROUND WRAPPER (TAMBAHKAN INI UNTUK MENGUNCI BLOB) */
+/* ========================= */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    /* Kunci utama agar blob yang lari ke kanan/bawah gak bikin layar HP melar */
+    overflow-x: hidden; 
+    position: relative;
+}
+
+/* ========================= */
 /* BACKGROUND */
 /* ========================= */
-
-.blob{
-
-    position:absolute;
-
-    width:650px;
-    height:650px;
-
-    border-radius:50%;
-
-    filter:blur(120px);
-
-    opacity:.3;
-
-    pointer-events:none;
-
-    z-index:-1;
-
-    animation:float 10s ease-in-out infinite;
-
+.blob {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .3;
+    pointer-events: none;
+    z-index: -1;
+    animation: float 10s ease-in-out infinite;
 }
 
-.blob1{
-
-    background:#ff4da6;
-
-    top:-120px;
-    left:-120px;
-
+.blob1 {
+    background: #ff4da6;
+    top: -120px;
+    left: -120px;
 }
 
-.blob2{
-
-    background:#5b7fff;
-
-    right:-120px;
-    bottom:-120px;
-
-    animation-delay:5s;
-
+.blob2 {
+    background: #5b7fff;
+    right: -120px;
+    bottom: -120px;
+    animation-delay: 5s;
 }
 
-@keyframes float{
-
-    0%{
-
-        transform:translate(0,0) scale(1);
-
+/* Biar di HP ukuran blob-nya menyesuaikan dan gak terlalu makan space */
+@media (max-width: 768px) {
+    .blob {
+        width: 300px;  /* Kita kecilin dikit pas di HP biar gak menonjol banget */
+        height: 300px;
+        filter: blur(80px);
     }
-
-    25%{
-
-        transform:translate(35px,-20px) scale(1.03);
-
+    .blob1 {
+        top: -50px;
+        left: -50px;
     }
-
-    50%{
-
-        transform:translate(60px,-40px) scale(.98);
-
+    .blob2 {
+        right: -50px;
+        bottom: -50px;
     }
+}
 
-    75%{
-
-        transform:translate(20px,15px) scale(1.02);
-
-    }
-
-    100%{
-
-        transform:translate(0,0) scale(1);
-
-    }
-
+@keyframes float {
+    0% { transform: translate(0,0) scale(1); }
+    25% { transform: translate(35px,-20px) scale(1.03); }
+    50% { transform: translate(60px,-40px) scale(.98); }
+    75% { transform: translate(20px,15px) scale(1.02); }
+    100% { transform: translate(0,0) scale(1); }
 }
 
 /* ========================= */
